@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<loadDefinition>
+    <sourcedb>jdbc:postgresql://__POSTGRES_ENDPOINT__:__PORT__/__DB_NAME__?user=__USERNAME__&amp;password=__PASSWORD__</sourcedb>
+    <targetdb>jdbc:redshift://__REDSHIFT_CLUSTER_ENDPOINT__:__PORT__/__DB_NAME__;PWD=__PASSWORD__;UID=__USERNAME__</targetdb>
+    <preload>
+        <classname>com.topcoder.utilities.dwload.tcsredshift.TCLoadTCSRedshiftPre</classname>
+        <parameter name="tcs_log_type">21</parameter>
+    </preload>
+    <load>
+        <classList>
+            <classname>com.topcoder.utilities.dwload.tcspostgresredshift.TCLoadConnectProjects</classname>
+        </classList>
+        <parameterList>
+        </parameterList>
+    </load>
+    <postload>
+        <classname>com.topcoder.utilities.dwload.tcsredshift.TCLoadTCSRedshiftPost</classname>
+        <parameter name="tcs_log_type" value="21"/>
+    </postload>
+</loadDefinition>

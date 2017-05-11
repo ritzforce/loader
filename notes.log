@@ -1,0 +1,13 @@
+Connect to Remote machine for NAT
+ssh tcaws-dev
+
+Command + K to Clear screen
+
+mvn clean install
+mvn package
+
+bash ./scripts/loadconnectdatascript.sh
+
+1. Edit query to include 'Type column data';
+2. Update After Timestamp 
+3. 

@@ -1,0 +1,6 @@
+general:
+  branches:
+    only:
+      /feature-.*/
+  artifacts:
+    - "target/tcs-loader-1.0.0.jar"

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<loadDefinition>
+    <sourcedb>jdbc:informix-sqli://10.25.94.52:2020/informixoltp:INFORMIXSERVER=informixoltp_tcpr;user=coder;password=Qn8TZxFFD77tzQwc</sourcedb>
+    <targetdb>jdbc:redshift://topcoder-dw.cl2tnqy7g8fu.us-east-1.redshift.amazonaws.com:5439/topcoder;ssl=true;sslfactory=com.amazon.redshift.ssl.NonValidatingFactory;PWD=Topcoder123$;UID=tcs_dw</targetdb>
+    <preload>
+        <classname>com.topcoder.utilities.dwload.tcsredshift.TCLoadTCSRedshiftPre</classname>
+    </preload>
+    <load>
+        <classList>
+            <classname>com.topcoder.utilities.dwload.tcsredshift.TCLoadClientProjectDim</classname>
+        </classList>
+        <parameterList>
+            <parameter name="tcs_log_type" value="10"/>
+        </parameterList>
+    </load>
+    <postload>
+        <classname>com.topcoder.utilities.dwload.tcsredshift.TCLoadTCSRedshiftPost</classname>
+        <parameter name="tcs_log_type" value="10"/>
+    </postload>
+</loadDefinition>

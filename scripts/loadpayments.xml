@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<loadDefinition>
+    <sourcedb>jdbc:informix-sqli://env.topcoder.com:2021/tcs_catalog:INFORMIXSERVER=informixoltp_tcp;user=informix;password=1nf0rm1x</sourcedb>
+    <targetdb>jdbc:redshift://__insert_endpoint_here__:5439/tcsdw;PWD=__insert_password__;UID=redshift</targetdb>
+    <preload>
+        <classname>com.topcoder.utilities.dwload.tcsredshift.TCLoadTCSRedshiftPre</classname>
+    </preload>
+    <load>
+        <classList>
+            <classname>com.topcoder.utilities.dwload.tcsredshift.TCLoadPayments</classname>
+        </classList>
+        <parameterList>
+        </parameterList>
+    </load>
+    <postload>
+        <classname>com.topcoder.utilities.dwload.tcsredshift.TCLoadTCSRedshiftPost</classname>
+        <parameter name="tcs_log_type" value="9"/>
+    </postload>
+</loadDefinition>

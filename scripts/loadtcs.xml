@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<loadDefinition>
+    <sourcedb>jdbc:informix-sqli://env.topcoder.com:2021/tcs_catalog:INFORMIXSERVER=informixoltp_tcp;user=informix;password=1nf0rm1x</sourcedb>
+    <targetdb>jdbc:informix-sqli://env.topcoder.com:2021/tcs_dw:INFORMIXSERVER=informixoltp_tcp;user=informix;password=1nf0rm1x</targetdb>
+    <preload>
+        <classname>com.topcoder.utilities.dwload.tcs.TCLoadTCSPre</classname>
+    </preload>
+    <load>
+        <classList>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadEvent</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadUserEvent</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadContests</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadContestPrize</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadUserContestPrize</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadClientProjectDim</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadDirectProjectDim</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadProjects</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadMarathonMatches</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadProjectPlatforms</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadProjectTechnologies</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadSpecReviews</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadScorecardTemplate</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadSubmissionReview</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadProjectResults</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadDesignProjectResults</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadSubmissionScreening</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadContestProject</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadUserRating</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadUserReliability</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadRoyalty</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadScorecardQuestion</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadScorecardResponse</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadTestcaseResponse</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadSubjectiveResponse</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadAppeal</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadTestcaseAppeal</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadSubmission</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadStreak</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadRank</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadSeason</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadStage</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadStageResults</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadDRTracks</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadDRTrackContests</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadDRTrackPoints</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadDRTrackResults</classname>
+            <classname>com.topcoder.utilities.dwload.tcs.TCLoadParticipationStats</classname>
+        </classList>
+        <parameterList>
+            <parameter name="submission_dir" value="file:/tcssubmissions/"/>
+            <parameter name="tcs_log_type" value="4"/>
+        </parameterList>
+    </load>
+    <postload>
+        <classname>com.topcoder.utilities.dwload.tcs.TCLoadTCSPost</classname>
+    </postload>
+</loadDefinition>
