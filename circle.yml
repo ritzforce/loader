@@ -1,6 +1,3 @@
-general:
-  dependencies:
-    pre:
-      - mvn install:install-file -Dfile=./RedshiftJDBC42-1.1.17.1017.jar -DgroupId=com.amazon -DartifactId=redshift.jdbc42 -Dversion=1.1.17.1017 -Dpackaging=jar -DgeneratePom=true
-  artifacts:
-      - "target/tcs-loader-1.0.0.jar"
+dependencies:
+  pre:
+    - mvn install:install-file -Dfile=./RedshiftJDBC42-1.1.17.1017.jar -DgroupId=com.amazon -DartifactId=redshift.jdbc42 -Dversion=1.1.17.1017 -Dpackaging=jar -DgeneratePom=true
